@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+    <script src="https://cdn.rawgit.com/thiagopnts/clappr-video360/master/dist/clappr-video360.min.js"></script>
+    <title>Vídeo</title>
+</head>
+<body>
+
+    <div id="player"></div>
+
+    <script>
+        //var player = new Clappr.Player({source: "http://your.video/here.mp4", parentId: "#player"});
+
+        // The URL to the 360 video player 
+        var Video360Url = '180.mp4';
+
+        // Configure your Clappr player.
+        var PlayerInstance = new Clappr.Player({
+            source: Video360Url,
+            plugins: {
+                container: [Video360],
+            },
+            parentId: '#player',
+        });
+
+        // Important to disable the click to pause native plugin of clappr
+        // otherwise you won't be able to use correctly the player
+        PlayerInstance.getPlugin('click_to_pause').disable();
+  
+  </script>
+
+    <!--<video play-on-click controls style="rotate: 0 -90 0;">
+        <source src="180.mp4">-->
+    </video>
+</body>
+</html>
