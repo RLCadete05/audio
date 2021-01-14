@@ -1,0 +1,67 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+</head>
+<body>
+    <audio id="demo">
+        <source src="audio.mp3">
+    </audio>
+    <div>
+        <button onclick="document.getElementById('demo').play()">Reproduzir o áudio</button>
+        <button onclick="document.getElementById('demo').pause()">Pausar o áudio</button>
+        <button onclick="document.getElementById('demo').volume+=0.1">Aumentar o volume</button>
+        <button onclick="document.getElementById('demo').volume-=0.1">Diminuir o volume</button>
+        <button onclick="document.getElementById('demo').playbackRate+=0.5">Aumentar velocidade</button>
+        <button onclick="document.getElementById('demo').playbackRate-=0.5">Diminuir velocidade</button>
+    </div>
+</body>
+</html>-->
+
+<link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+<link rel="stylesheet" href="style.css">
+<div class="player-ctrl">
+
+  <a onclick="playShow()" id="music-play"></a>
+  <a id="music-pause" onclick="pauseShow()" style="display:none;"></a>
+</div>
+
+<!-- Audio player -->
+<audio id="music-audio">
+    <source src="audio.mp3"">
+</audio>
+
+<script>
+    /* 
+    Esse modelo também funciona para vídeo basta trocar a tag <audio> por <video>:
+    
+    <video width="1280" height="720" >
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+    </video> 
+    
+    */
+
+    // Pega o ID do audio
+    var musicAudio = document.getElementById('music-audio');
+
+    var playBtn = document.getElementById('music-play');
+
+    var pauseBtn = document.getElementById('music-pause');
+
+    // Play audio & mostra pause btn
+    var playShow = function() {
+        musicAudio.play();
+        playBtn.style.display = "none";
+        pauseBtn.style.display = "inline-block";
+    };
+
+    // Pause audio & mostra play btn
+    var pauseShow = function() {
+        musicAudio.pause();
+        playBtn.style.display = "inline-block";
+        pauseBtn.style.display = "none";
+    };
+</script>
