@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <audio id="music" controls>
+        <source src="../musics/R.E.M. - Losing My Religion Lyrics.mp3" type="mp3">
+    </audio>
+    <div>
+        <!--<button onclick="playAudio()" type="button" class="overlayMobile">play</button>
+        <button onclick="pauseAudio()" type="button" class="overlayMobile">pause</button>-->
+        <button onclick="document.getElementById('music').play()">Reproduzir o áudio</button>
+        <button onclick="document.getElementById('music').pause()">Pausar o áudio</button>
+    </div>
+
+</body>
+</html>
